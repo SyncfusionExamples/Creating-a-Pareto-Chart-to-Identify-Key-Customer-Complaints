@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ParetoChartDemo.MainPage" Background="#CF6679"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:ParetoChartDemo">
+    
+    <ContentPage.BindingContext>
+        <local:ConsumerComplaintsViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    
+    <Grid RowSpacing="10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+
+        <HorizontalStackLayout Grid.Row="0" Spacing="5">
+            
+            <Border Background="#570CBE" WidthRequest="25" 
+                    VerticalOptions="Fill" Stroke="transparent">
+            </Border>
+            
+            <VerticalStackLayout>
+                <Label Text="Pareto Chart" TextColor="#570CBE" 
+                       FontSize="Large" HorizontalOptions="Start" />
+                <Label Text="Identify Key Customer Complaints" 
+                       TextColor="White" FontSize="Caption" FontAttributes="Italic" HorizontalOptions="Start" />
+            </VerticalStackLayout>
+            
+        </HorizontalStackLayout>
+        
+        <BoxView Grid.Row="1" CornerRadius="20" Margin="5,0,5,10" 
+                 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+        <chart:SfCartesianChart x:Name="chart" Grid.Row="1" Margin="10" 
+                                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <chart:SfCartesianChart.XAxes>
+                <chart:CategoryAxis ShowMajorGridLines="False" 
+                                    LabelPlacement="{OnPlatform Android= OnTicks, iOS= OnTicks, Default=BetweenTicks}" 
+                                    LabelCreated="CategoryAxis_LabelCreated">
+                    <chart:CategoryAxis.Title>
+                        <chart:ChartAxisTitle Text="Defects" TextColor="White" 
+                                              FontSize="15" FontAttributes="Bold" />
+                    </chart:CategoryAxis.Title>
+                    <chart:CategoryAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle TextColor="White"/>
+                    </chart:CategoryAxis.LabelStyle>
+                </chart:CategoryAxis>
+            </chart:SfCartesianChart.XAxes>
+
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis ShowMinorGridLines="False" 
+                                     PlotOffsetEnd="10" Interval="25000" 
+                                     EdgeLabelsDrawingMode="Center" ShowMajorGridLines="True" 
+                                     LabelCreated="NumericalAxis_LabelCreated">
+                    <chart:NumericalAxis.Title>
+                        <chart:ChartAxisTitle Text="Frequency" 
+                                              TextColor="White" 
+                                              FontSize="15" FontAttributes="Bold" />
+                    </chart:NumericalAxis.Title>
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle TextColor="White"/>
+                    </chart:NumericalAxis.LabelStyle>
+                    <chart:NumericalAxis.AxisLineStyle>
+                        <chart:ChartLineStyle Stroke="Transparent" StrokeWidth="0"/>
+                    </chart:NumericalAxis.AxisLineStyle>
+                </chart:NumericalAxis>
+
+                <chart:NumericalAxis Name="CumulativeAxis" EdgeLabelsDrawingMode="Center" 
+                                     Interval="10" ShowMajorGridLines="False" 
+                                     ShowMinorGridLines="False" Minimum="0" Maximum="100" 
+                                     PlotOffsetEnd="10" CrossesAt="{x:Static x:Double.MaxValue}">
+                    <chart:NumericalAxis.Title>
+                        <chart:ChartAxisTitle Text="% of Defects" TextColor="White" 
+                                              FontSize="15" FontAttributes="Bold" />
+                    </chart:NumericalAxis.Title>
+                    <chart:NumericalAxis.AxisLineStyle>
+                        <chart:ChartLineStyle Stroke="Transparent" StrokeWidth="0"/>
+                    </chart:NumericalAxis.AxisLineStyle>
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle LabelFormat="0'%'" TextColor="White"/>
+                    </chart:NumericalAxis.LabelStyle>
+                </chart:NumericalAxis>
+            </chart:SfCartesianChart.YAxes>
+            
+            <chart:ColumnSeries Label="Count"
+                                    ItemsSource="{Binding DataValues}" 
+                                    XBindingPath="Defect" 
+                                    YBindingPath="Frequency" 
+                                    PaletteBrushes="{Binding CustomPalette}" 
+                                    Width="0.8" 
+                                    CornerRadius="5,5,0,0"/>
+            
+            <chart:LineSeries Label="Cumulative %"
+                              ItemsSource="{Binding CumulativeSource}" 
+                              XBindingPath="Defect" 
+                              YBindingPath="CumulativeFrequency" 
+                              StrokeWidth="2" Fill="#03DAC5" 
+                              YAxisName="CumulativeAxis" 
+                              ShowMarkers="True">
+                <chart:LineSeries.MarkerSettings>
+                    <chart:ChartMarkerSettings Width="12" 
+                                               Height="12" 
+                                               Fill="white" 
+                                               StrokeWidth="2" 
+                                               Stroke="#570CBE"/>
+                </chart:LineSeries.MarkerSettings>
+            </chart:LineSeries>
+            
+        </chart:SfCartesianChart>
+        
+    </Grid>
+
+</ContentPage>
