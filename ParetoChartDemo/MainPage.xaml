@@ -24,9 +24,9 @@
             
             <VerticalStackLayout>
                 <Label Text="Pareto Chart" TextColor="#570CBE" 
-                       FontSize="Large" HorizontalOptions="Start" />
+                       FontSize="{x:OnPlatform MacCatalyst='30', Default='Large'}" HorizontalOptions="Start" />
                 <Label Text="Identify Key Customer Complaints" 
-                       TextColor="White" FontSize="Caption" FontAttributes="Italic" HorizontalOptions="Start" />
+                       TextColor="White" FontSize="{x:OnPlatform MacCatalyst='Large', Default='Caption'}" FontAttributes="Italic" HorizontalOptions="Start" />
             </VerticalStackLayout>
             
         </HorizontalStackLayout>
