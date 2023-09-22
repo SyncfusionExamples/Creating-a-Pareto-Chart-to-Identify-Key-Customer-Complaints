@@ -1,7 +1,7 @@
 # Creating a Pareto Chart to Identify Key Customer Complaints
 A Pareto chart is a graphical tool that visually shows which factors have the most impact, helping to focus on the most important issues. This sample demonstrates how to create a Pareto Chart to Identify Key Customer Complaints using .NET MAUI (SfCartesianChart).
 
-<img width="959" alt="windows" src="https://github.com/SyncfusionExamples/Creating-a-Pareto-Chart-to-Identify-Key-Customer-Complaints/assets/105496706/b1e56cd9-8241-4ede-b3d6-aa75d7bd8fdc">
+<img width="959" alt="windows" src="https://github.com/SyncfusionExamples/Creating-a-Pareto-Chart-to-Identify-Key-Customer-Complaints/assets/105496706/7ea9f3d5-e756-4b7f-b325-2ffc2cb45648">
 
 ### Customizing Chart Appearance
 Customize the appearance of the charts by changing axis elements' appearance, column colors, adding titles, enabling markers, and modifying the column width as shown below:
