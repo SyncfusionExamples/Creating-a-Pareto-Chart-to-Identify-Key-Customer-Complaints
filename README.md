@@ -15,4 +15,4 @@ We can further customize axis elements, including axis label style, major tickli
 #### Customizing Chart Series
 The series’ appearance can be customized by assigning different fill colors to each series, enabling data labels for the series segments and enabling marker for highlighting the series data points.
 
-For a detailed explanation, refer to the [Creating a Pareto Chart to Identify Key Customer Complaint blog]()
+For a detailed explanation, refer to the [Creating a Pareto Chart to Identify Key Customer Complaint blog](https://www.syncfusion.com/blogs/post/dotnet-maui-pareto-chart-for-customer-complaints.aspx)
