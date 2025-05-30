@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.6.33815.320
+VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParetoChartDemo", "ParetoChartDemo.csproj", "{83CE7614-5CB6-4D4E-9EE7-87CB10566673}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParetoChartDemo", "ParetoChartDemo\ParetoChartDemo.csproj", "{77EB0B51-59CE-4E91-BF44-7C4E2809195D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,17 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{83CE7614-5CB6-4D4E-9EE7-87CB10566673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83CE7614-5CB6-4D4E-9EE7-87CB10566673}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83CE7614-5CB6-4D4E-9EE7-87CB10566673}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{83CE7614-5CB6-4D4E-9EE7-87CB10566673}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83CE7614-5CB6-4D4E-9EE7-87CB10566673}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83CE7614-5CB6-4D4E-9EE7-87CB10566673}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{77EB0B51-59CE-4E91-BF44-7C4E2809195D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77EB0B51-59CE-4E91-BF44-7C4E2809195D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77EB0B51-59CE-4E91-BF44-7C4E2809195D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77EB0B51-59CE-4E91-BF44-7C4E2809195D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {37467AA6-6140-4255-BC3F-939BD7FB4187}
+		SolutionGuid = {25FED9C9-702E-4D69-9B87-35301CB58F05}
 	EndGlobalSection
 EndGlobal
